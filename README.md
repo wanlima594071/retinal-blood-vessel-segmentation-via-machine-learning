@@ -67,13 +67,14 @@ Each model was provided with all 20 images under 40 random augmentations that in
 After training both networks, we saw comparable results. The maximum dice coefficient in the set was 0.9690, while the minimum was 0.9201. Overall, the two models predict within this range for the testing images. However, model 1 has only trained for 50 epochs compared to model 2 which has trained for 100 epochs. Thus, given more training time, we might expect model 1 to outperform model 2. This is intuitive, as model 1 contains more model parameters that can better model the ground truth observed. Results for model 2 are the only results shown for all 20 testing and training images, but are nearly identical visually to model 1
 
 
+One of the test images: The blue line is the predited vessel, the yellow line is the ground truth
+
+![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/test_1_model2.png)
+
+
 Fully trained training images 
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/Training_all20.png)
 
 Fully trained test images 
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/Testing_all20.png)
-
-
-This is one of our results:
-![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/test_1_model2.png)
 
