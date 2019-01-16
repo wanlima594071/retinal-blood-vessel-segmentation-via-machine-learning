@@ -4,7 +4,7 @@ Wanli Ma, Mitchel Colebank, Emily Zhang
 
 Data 
 
-We used the Digital Retinal Images for Retinal Extraction (\hyperlink{https://www.isi.uu.nl/Research/Databases/DRIVE/index.html}{DRIVE}) database, which is a database of manual segmentations done on the retinal vasculature. The data set contains 40 manually labeled images, divided into a training and a test set, both containing 20 images. For the training images, a single manual segmentation of the vasculature is available. For the test images, two manual segmentations are available; one is used as standard, the other one then can be used to compare computer generated segmentations with those of an independent human observer. For purposes of this project, we only consider the manual segmentations as ground truths. 
+We used the Digital Retinal Images for Retinal Extraction database, which is a database of manual segmentations done on the retinal vasculature (https://www.isi.uu.nl/Research/Databases/DRIVE/index.html). The data set contains 40 manually labeled images, divided into a training and a test set, both containing 20 images. For the training images, a single manual segmentation of the vasculature is available. For the test images, two manual segmentations are available; one is used as standard, the other one then can be used to compare computer generated segmentations with those of an independent human observer. For purposes of this project, we only consider the manual segmentations as ground truths. 
 
 One example of training image (image of eyeball):
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/21_training.png)
