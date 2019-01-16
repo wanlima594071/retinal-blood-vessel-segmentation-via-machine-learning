@@ -1,4 +1,10 @@
 # retinal-blood-vessel-segmentation-via-machine-learning
 
-This project
+Wanli Ma, Mitchel Colebank, Emily Zhang
+
+
+
+
+
+
 
