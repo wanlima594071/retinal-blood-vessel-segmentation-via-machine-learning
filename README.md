@@ -2,7 +2,7 @@
 
 Wanli Ma, Mitchel Colebank, Emily Zhang
 
-Data 
+**Data 
 
 We used the Digital Retinal Images for Retinal Extraction database, which is a database of manual segmentations done on the retinal vasculature (https://www.isi.uu.nl/Research/Databases/DRIVE/index.html). The data set contains 40 manually labeled images, divided into a training and a test set, both containing 20 images. For the training images, a single manual segmentation of the vasculature is available. For the test images, two manual segmentations are available; one is used as standard, the other one then can be used to compare computer generated segmentations with those of an independent human observer. For purposes of this project, we only consider the manual segmentations as ground truths. 
 
@@ -17,7 +17,7 @@ In this study, we focus on how to identify the blood vessels from retinal images
 
 
 
-U-Net Model
+**U-Net Model
 
 We use the U-Net "fully connected" convolutional network to classify every pixel of the input image. We have attempted to run the full, 1/2 , and 1/4 U-net models  with respect to the number of 2D convolution at each phase of the architecture.   The first model used in our work is the original  10 layer model with 64 filters in the first layer. This model itself contains sequential two-dimensional (2D) convolutions, followed by max-pooling in the "down-side" of the architecture, and copy-and-crop in the horizontal direction. Both sides of the architecture contain only ReLu activation functions, which helps eliminate the possibility of gradient blow-up or vanishing.  An additional set of up-sampling and 2D convolutions follows (i.e. the up-side), creating the iconic U shape of the architecture. After the down  and up side's of the architecture have finished, each pixel is classified into two classes: either the foreground (the retinal blood vessels) or the background (every other pixel). This is done by making the very last convolutional layer a soft-max function. 
 
@@ -38,7 +38,7 @@ Reduced layer U-Net model. In contrast to the original architecture, the Reduced
 
 
 
-Three attemps to augment data
+**Three attemps to augment data
 
 The image-size and the ground truth are 2D images of size $584\times565\times3$ and $584\times565$, respectively. In order to fit the proper size of input for u-net, we need to crop the images to be square, making the sizes  $556\times 556\times 3$ for the image and $556\times556 \times 1$ for the ground truth. Similarly, we crop the testing images to the same dimensions. Using 20 images for training the architecture is not ideal, as the machine learning parameters cannot be learned with such a small data set. To combat this, we considered several different pre-processing steps.
 
@@ -60,7 +60,7 @@ We ultimately changed back to the full U-Net model, which contains 4 convolution
 
 
 
-Results
+**Results
 
 Each model was provided with all 20 images under 40 random augmentations that included rotation and shearing. Due to the computational complexity of the U-Net architecture, we only ran 50 epochs for the 64 and 32 first layer 2D convolution models, and computed 100 epochs for the smallest, 16 2D convolution first layer model. The abundance of parameters in the two larger models made training an issue, since computational resources were limited. The original U-Net model was unable to train on available CPU machines, hence we focused our attention on the two reduced U-Net models. We will denote the 32 and 16 2D convolutional first layer models as model 1 and model 2, respectively.
 
