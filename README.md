@@ -2,12 +2,19 @@
 
 Wanli Ma, Mitchel Colebank, Emily Zhang
 
+
+
+
+
+
 **Data** 
 
 We used the Digital Retinal Images for Retinal Extraction database, which is a database of manual segmentations done on the retinal vasculature (https://www.isi.uu.nl/Research/Databases/DRIVE/index.html). The data set contains 40 manually labeled images, divided into a training and a test set, both containing 20 images. For the training images, a single manual segmentation of the vasculature is available. For the test images, two manual segmentations are available; one is used as standard, the other one then can be used to compare computer generated segmentations with those of an independent human observer. For purposes of this project, we only consider the manual segmentations as ground truths. 
 
 One example of training image (image of eyeball):
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/21_training.png)
+
+
 
 Ground Truth images for this training image (manual segmentation of the vasculature):
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/21_manual1.gif)
@@ -25,14 +32,16 @@ One draw-back of the original full u-net model is that it uses a large number of
 
 Since we use valid padding in all convolutional layers, the output size of the u-net models is smaller than the input size. However, in order to compare the images after training with the  truth images, we must ensure that the output size of the u-net model equals that  of the truth. We can accomplish this by padding the original image. For example, given images with red, green, and blue (RGB) components of size 532*532*3  and truth images with size 532*532*1, we can use zero-padding to make the input size of the u-net model equals 716*716*3. The resulted output size would then be 532*532*2.
 
-
+Full U-Net with 16 filters in conv 1, also referred as 1/4 model, model 2, or  16 2D convolution first  layer  model:
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/pic1.png)
-Full U-Net with 16 filters in conv 1, also referred as 1/4 model, model 2, or  16 2D convolution first  layer  model
 
 
+
+
+Reduced layer U-Net model. In contrast to the original architecture, the Reduced U-Net only has three (instead of four) successive 2D convolutions on the up and down sides:
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/u-net.png)
 
-Reduced layer U-Net model. In contrast to the original architecture, the Reduced U-Net only has three (instead of four) successive 2D convolutions on the up and down sides
+
 
 
 
@@ -44,8 +53,10 @@ The image-size and the ground truth are 2D images of size $584\times565\times3$ 
 
 First, we standardize each images so that each of the RGB components are scaled from $[0,255]$ to $[0,1]$. This assists in creating larger contrast between intensity regions. In particular, the retinal images provided are a reddish hue and can be contrasted in a better manner after standardization.
 
-Our next procedure is to increase the size of the training samples. Several attempts were made to enhance the dataset available for training. Initially, we cut the images into 4 equal quadrants. This produces 80 training segments from the original 20. We consider symmetric padding for this set of data, since the quadrants are not in the proper size for fitting the reduced U-Net model. Next we apply shearing and rotation in different degree for those quadrants to generate more training and corresponding truth images. The  image prepossessing is also described in the Figure\ref{imagespre}.\\
+Our next procedure is to increase the size of the training samples. Several attempts were made to enhance the dataset available for training. Initially, we cut the images into 4 equal quadrants. This produces 80 training segments from the original 20. We consider symmetric padding for this set of data, since the quadrants are not in the proper size for fitting the reduced U-Net model. Next we apply shearing and rotation in different degree for those quadrants to generate more training and corresponding truth images. 
 
+
+The  image prepossessing is  described in the three figures below:
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/pro1.png)
 
 
