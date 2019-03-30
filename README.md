@@ -11,10 +11,10 @@
 
 Retinal blood vessels are the only deep vessels that can be observed in human body and directly reflect the omen of some cardiovascular diseases and severity of diabetic retinopathy. Therefore it is essential for eye doctors to identify the retinal blood vessels from retinal images to diagnose eye diseases. The pixelwise classification of vessels from retinal images is called Retinal Blood Vessel Segmentation.
 
-Below is one example of an image of eyeball (training image):
+Below is one example of an image of eyeball (training image for the machine learning model):
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/21_training.png)
 
-Below is one example of an Retinal Blood Vessel Segmented image:
+Below is one example of an Retinal Blood Vessel Segmented image (ground truth for training):
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/21_manual1.gif)
 
 
@@ -35,14 +35,6 @@ Below is the plot:
 **Data** 
 
 I used the Digital Retinal Images for Retinal Extraction database, which is a database of manual segmentations done on the retinal vasculature (https://www.isi.uu.nl/Research/Databases/DRIVE/index.html). The data set contains 40 manually labeled images, divided into a training and a test set, both containing 20 images. For the training images, a single manual segmentation of the vasculature is available. For the test images, two manual segmentations are available; one is used as standard, the other one then can be used to compare computer generated segmentations with those of an independent human observer. For purposes of this project, I only consider the manual segmentations as ground truths. 
-
-One example of training image (image of eyeball):
-![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/21_training.png)
-
-
-
-Ground Truth images for this training image (manual segmentation of the vasculature):
-![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/21_manual1.gif)
 
 In this study, I focus on how to identify the blood vessels from retinal images using automatic approaches. The use of automatic diagnostic tools for retinal images will save time and improve the accuracy compared to manual diagnosis, especially when faced with small vessels that are hard for human identification. There are numerous supervised and unsupervised machine learning models that can be trained to identify the retinal images at present. In this article, I discuss supervised segmentation approaches, such as deep, convolutional neural networks and how they are used to extract features from the pre-processed image. Specifically, this work focuses on using a pooling-upsampling approach called U-Net
 
