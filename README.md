@@ -6,7 +6,9 @@
 
 
 **Introduction** 
-*What is Retinal Blood Vessel Segmentation?*
+
+**What is Retinal Blood Vessel Segmentation?**
+
 Retinal blood vessels are the only deep vessels that can be observed in human body and directly reflect the omen of some cardiovascular diseases and severity of diabetic retinopathy. Therefore it is essential for eye doctors to identify the retinal blood vessels from retinal images to diagnose eye diseases. The pixelwise classification of vessels from retinal images is called Retinal Blood Vessel Segmentation.
 
 Below is one example of an image of eyeball (training image):
@@ -16,14 +18,19 @@ Below is one example of an Retinal Blood Vessel Segmented image:
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/21_manual1.gif)
 
 
-*Why Machine Learning?*
+
+
+**Why Machine Learning?**
 Retinal blood vessel segmentation is very time-comsuming (as each pixel needs to be classified) to perform manually and only experienced eye doctors can accurately perform the task. Therefore a Machine Learning approach can extensively expediate the segmentation process while achive higher accuracy than manual segmentation. 
 
 
-*Achievements*
+**Achievements**
 My U-Net CNN architechture achieves 96% IoU accuracy, which is higher than the average of a manual segmentation. So Machine Learning algorithm does win over experienced eye doctors in both speed and accuracy!
 
 Below is the plot:
+
+
+
 
 **Data** 
 
