@@ -28,10 +28,14 @@ Retinal blood vessel segmentation is very time-comsuming (as each pixel needs to
 
 **High Lights** 
 
-• Given 40 patients’ eyeball images, predicted pixel wise retinal blood vessels in eyeball images                         
+• Given 40 patients’ eyeball images, predicted pixel wise retinal blood vessels in eyeball images
+
 • Built U-net Convolutional Neural Network (CNN) model (Python, Keras) for pixel wise classification
+
 • Preprocessed and augmented the 20 training images to obtain 400 images by mask, normalization, shearing 
+
 • Achieved 96% (IoU) accuracy on 20 patients’ retinal blood vessel test images
+
 
 My U-Net CNN architechture achieves 96% IoU accuracy, which is higher than the average of a manual segmentation. So Machine Learning algorithm does win over experienced eye doctors in both speed and accuracy!
 
