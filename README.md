@@ -33,7 +33,7 @@ Retinal blood vessel segmentation is very time-comsuming (as each pixel needs to
 My U-Net CNN architechture achieves 96% IoU accuracy, which is higher than the average of a manual segmentation. So Machine Learning algorithm does win over experienced eye doctors in both speed and accuracy!
 
 Below is the plot for the loss and IoU accuracy of the 40 test images and 100 training images:
-![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/metrics.pdf)
+![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/metrics.pdf?raw=true)
 
 
 ****
