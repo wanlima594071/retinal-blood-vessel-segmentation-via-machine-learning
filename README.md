@@ -21,10 +21,13 @@ Below is one example of an Retinal Blood Vessel Segmented image (ground truth fo
 
 
 **Why Machine Learning?**
+
 Retinal blood vessel segmentation is very time-comsuming (as each pixel needs to be classified) to perform manually and only experienced eye doctors can accurately perform the task. Therefore a Machine Learning approach can extensively expediate the segmentation process while achive higher accuracy than manual segmentation. 
 
 
+
 **High Lights** 
+
 • Given 40 patients’ eyeball images, predicted pixel wise retinal blood vessels in eyeball images                         
 • Built U-net Convolutional Neural Network (CNN) model (Python, Keras) for pixel wise classification
 • Preprocessed and augmented the 20 training images to obtain 400 images by mask, normalization, shearing 
@@ -36,7 +39,7 @@ Below is the plot for the loss and IoU accuracy of the 40 test images and 100 tr
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/metric.jpg)
 
 
-****
+
 **Data** 
 
 I used the Digital Retinal Images for Retinal Extraction database, which is a database of manual segmentations done on the retinal vasculature (https://www.isi.uu.nl/Research/Databases/DRIVE/index.html). The data set contains 40 manually labeled images, divided into a training and a test set, both containing 20 images. For the training images, a single manual segmentation of the vasculature is available. For the test images, two manual segmentations are available; one is used as standard, the other one then can be used to compare computer generated segmentations with those of an independent human observer. For purposes of this project, I only consider the manual segmentations as ground truths. 
@@ -62,8 +65,6 @@ Full U-Net with 16 filters in conv 1, also referred as 1/4 model, model 2, or  1
 
 Reduced layer U-Net model. In contrast to the original architecture, the Reduced U-Net only has three (instead of four) successive 2D convolutions on the up and down sides:
 ![github-small](https://github.com/wanlima594071/retinal-blood-vessel-segmentation-via-machine-learning/blob/master/u-net.png)
-
-
 
 
 
